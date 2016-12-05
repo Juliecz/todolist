@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ListDB" Class="ListDbLinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\ListDB.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ListDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="IdUser" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="User_Text" Member="Texts" ThisKey="IdUser" OtherKey="IdUser" Type="Text" />
+      <Association Name="User_Category" Member="Categories" ThisKey="IdUser" OtherKey="IdUser" Type="Category" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Text" Member="Texts">
+    <Type Name="Text">
+      <Column Name="IdText" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdCategory" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[ Task]" Member="_Task" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Completed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="User_Text" Member="User" ThisKey="IdUser" OtherKey="IdUser" Type="User" IsForeignKey="true" />
+      <Association Name="Category_Text" Member="Category" ThisKey="IdCategory" OtherKey="IdCategory" Type="Category" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Category" Member="Categories">
+    <Type Name="Category">
+      <Column Name="IdCategory" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IdUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Category_Text" Member="Texts" ThisKey="IdCategory" OtherKey="IdCategory" Type="Text" />
+      <Association Name="User_Category" Member="User" ThisKey="IdUser" OtherKey="IdUser" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

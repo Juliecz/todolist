@@ -1,0 +1,79 @@
+﻿body {
+    margin-top: 61px;
+    background-color: #eeeeee;
+}
+.row {
+    width: 100%;
+    display: inline;
+    margin: auto;
+    float: none;
+}
+body .row #prihlaseni #druhy .form-group .col-sm-6 #potvrzeniH {
+    color: red;
+    text-align: center;
+}
+
+.navbar .container .navbar-brand a {
+    color: #eeeeee;
+}
+
+#lists {
+    margin-top: 45px;
+}
+#formGroup {
+    margin-top: 80px;
+    text-align:center;
+}
+#CheckBoxList1 {
+    margin: 0px auto;
+    margin-top: 50px;
+}
+#uzjmenoExistuje {
+    color: red;
+}
+hr {
+    border-color: #D4D8D1;
+    border-style: solid none;
+    border-width: 1px 0;
+    margin: 18px 0;
+}
+#checkboxListCompleted {
+    margin: 0 auto;
+    color: #A8A8A1;
+    margin-top: 50px;
+}
+
+#kontrolaDiv {
+    width: 100%;
+    height: 300px;
+}
+#Label1 {
+    color: red;
+}
+#btnCat a {
+    color: black;
+}
+
+#labelCategName {
+    font-size:30px;
+    font-weight: 600;
+    /*margin-top: 30px;*/
+
+}
+body #form1 .row #lists #btnCat .mezera {
+    margin-top: 8px;
+}
+#popis {
+    font-weight: 700;
+    margin-top: 150px;
+    margin-right:250px;
+}
+#imageD {
+    text-align:right;
+}
+#textD {
+margin-top: 50px;
+}
+#btnD {
+margin-top:70px;
+}
